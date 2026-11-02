@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kamo IT Portal</title>
+<meta name="description" content="Kamo IT Portal – cổng truy cập ứng dụng nội bộ Công ty TNHH Kamo">
+<meta name="theme-color" content="#0c1f45">
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kamo IT">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#0a1a3b;--bg2:#12306a;--bg3:#1d4f96;--yellow:#f5c518;--yellow-2:#ffd84d;--txt:#fff;--dim:rgba(255,255,255,.62)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--txt);-webkit-font-smoothing:antialiased;
+  min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow-x:hidden;
+  background:
+    radial-gradient(900px 520px at 50% 38%,rgba(45,110,200,.42),transparent 70%),
+    linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 60%,#163f80 100%);
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+/* luoi cham mo phia sau */
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.2px);background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 80%)}
+
+/* ===== Thanh tren ===== */
+.top{position:relative;display:flex;align-items:center;justify-content:space-between;padding:22px 32px}
+.logo{height:30px;width:auto;display:block}
+.logo-txt{font-weight:600;letter-spacing:2px;color:var(--yellow);font-size:24px}
+.clock{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums;letter-spacing:.2px}
+
+/* ===== Trung tam ===== */
+main{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 20px 40px;text-align:center}
+.kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin:0 0 14px}
+h1{margin:0;font-size:46px;font-weight:300;letter-spacing:-.5px;line-height:1.1}
+h1 span{color:var(--yellow);font-weight:400}
+.lead{margin:14px 0 0;font-size:15px;color:var(--dim)}
+
+.apps{display:flex;gap:64px;margin-top:64px}
+.app{display:flex;flex-direction:column;align-items:center;gap:16px;text-decoration:none;color:var(--txt);outline:none;width:180px}
+.ic{width:128px;height:128px;border-radius:32px;display:grid;place-items:center;position:relative;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s}
+.ic svg{width:58px;height:58px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ic:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(0,0,0,.15)}
+/* tat ca icon cung 1 phong cach: khoi xanh, hinh ve vang - chi khac hinh */
+.ic{background:linear-gradient(150deg,#2a6fd0 0%,#173f86 100%);box-shadow:0 18px 40px rgba(5,20,60,.55)}
+.ic svg{stroke:var(--yellow)}
+.app:hover .ic,.app:focus-visible .ic{transform:translateY(-6px) scale(1.04)}
+.app:hover .ic,.app:focus-visible .ic{box-shadow:0 26px 50px rgba(5,20,60,.7),0 0 0 6px rgba(245,197,24,.22)}
+.app:active .ic{transform:scale(.97)}
+.nm{font-size:17px;font-weight:500;letter-spacing:.1px}
+.ds{font-size:13px;color:var(--dim);line-height:1.5;margin-top:-8px}
+
+/* ===== Chan trang: thanh Ho tro IT ===== */
+footer{position:relative;padding:0 24px calc(14px + env(safe-area-inset-bottom))}
+.sup{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  background:linear-gradient(100deg,#12306a 0%,#1d4f96 100%);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:12px 14px 12px 22px;box-shadow:0 10px 30px rgba(3,12,35,.35)}
+.sup-l{display:flex;align-items:center;gap:10px;color:var(--yellow);font-weight:700;font-size:14px;letter-spacing:1.5px;white-space:nowrap}
+.sup-l svg{width:20px;height:20px;fill:none;stroke:var(--yellow);stroke-width:2;stroke-linecap:round}
+.sup-r{display:flex;align-items:center;background:rgba(255,255,255,.1);border-radius:999px;padding:8px 6px}
+.sup-r .it{display:flex;align-items:center;gap:9px;padding:2px 16px;color:#fff;text-decoration:none;font-size:14.5px;white-space:nowrap}
+.sup-r .it + .it{border-left:1px solid rgba(255,255,255,.28)}
+.sup-r a.it:hover{color:var(--yellow)}
+.sup-r svg{width:17px;height:17px;fill:#fff;flex:none}
+.sup-r a.it:hover svg{fill:var(--yellow)}
+.copy{text-align:center;font-size:12px;color:var(--dim);margin-top:12px}
+
+/* ===== Dien thoai ===== */
+@media (max-width:640px){
+  .top{padding:16px 20px}
+  .logo{height:24px}
+  .clock{font-size:12px}
+  main{justify-content:flex-start;padding:7vh 20px 24px}
+  .kicker{font-size:11px;letter-spacing:2.5px}
+  h1{font-size:34px}
+  .lead{font-size:14px}
+  .apps{gap:28px;margin-top:48px;width:100%;justify-content:center}
+  .app{width:44%;max-width:160px;gap:12px}
+  .ic{width:96px;height:96px;border-radius:24px}
+  .ic svg{width:44px;height:44px}
+  .nm{font-size:15px}
+  .ds{font-size:12px}
+}
+@media (max-width:760px){
+  footer{padding:0 14px calc(12px + env(safe-area-inset-bottom))}
+  .sup{flex-direction:column;align-items:stretch;padding:14px;border-radius:14px}
+  .sup-l{justify-content:center}
+  .sup-r{flex-direction:column;align-items:stretch;border-radius:12px;padding:4px 0}
+  .sup-r .it{padding:10px 16px;justify-content:center;font-size:14px}
+  .sup-r .it + .it{border-left:0;border-top:1px solid rgba(255,255,255,.18)}
+}
+@media (max-width:340px){.ic{width:80px;height:80px;border-radius:20px}.ic svg{width:36px;height:36px}}
+@media (prefers-reduced-motion:reduce){.ic{transition:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <img class="logo" src="logo-text.png" alt="KAMO" onerror="this.outerHTML='<span class=&quot;logo-txt&quot;>KAMO</span>'">
+  <span class="clock" id="clock"></span>
+</header>
+
+<main>
+  <h1>Kamo <span>IT Portal</span></h1>
+  <p class="lead">Chọn ứng dụng để bắt đầu</p>
+
+  <nav class="apps">
+    <a class="app it" href="https://kamo-it-services.github.io/kamo-auth/" data-key="1" title="Mở IT Account Portal (phím 1)">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2.8l7.2 3v5.4c0 4.6-3.1 8.5-7.2 9.8-4.1-1.3-7.2-5.2-7.2-9.8V5.8L12 2.8z"/><circle cx="12" cy="10.2" r="2.3"/><path d="M12 12.5v3.6"/></svg></span>
+      <span class="nm">IT Account</span>
+      <span class="ds">Tài khoản &amp; dịch vụ CNTT</span>
+    </a>
+    <a class="app pay" href="https://38melinh.dynns.com:59090/" data-key="2" title="Mở Payment Portal (phím 2)">
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="2.8" y="5.2" width="18.4" height="13.6" rx="2.6"/><path d="M2.8 9.8h18.4"/><path d="M6.8 14.8h4.4"/></svg></span>
+      <span class="nm">Payment</span>
+      <span class="ds">Thanh toán &amp; Bank</span>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="sup">
+    <div class="sup-l">
+      <svg viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="13.5" width="4" height="6" rx="1.5"/><rect x="17" y="13.5" width="4" height="6" rx="1.5"/></svg>
+      HỖ TRỢ IT
+    </div>
+    <div class="sup-r">
+      <span class="it"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>Lê Minh Hiếu - BPIT</span>
+      <a class="it" href="tel:0984559690"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg>098 455 9690</a>
+      <a class="it" href="mailto:hieulm.morico.life@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L3.6 7v.3L12 13l8.4-5.7V7z"/></svg>hieulm.morico.life@gmail.com</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Kamo Co.,Ltd</div>
+</footer>
+
+<script>
+(function(){
+  const c = document.getElementById('clock');
+  const tick = () => { const d = new Date();
+    c.textContent = d.toLocaleDateString('vi-VN',{weekday:'long', day:'2-digit', month:'2-digit', year:'numeric'}) + ' · ' + d.toLocaleTimeString('vi-VN',{hour:'2-digit', minute:'2-digit'}); };
+  tick(); setInterval(tick, 30000);
+})();
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const a = document.querySelector(`.app[data-key="${e.key}"]`); if (a) location.href = a.href;
+});
+</script>
+</body>
+</html>
