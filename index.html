@@ -197,12 +197,8 @@ footer{position:relative;padding:0 24px calc(14px + env(safe-area-inset-bottom))
   .apps,.apps.many{gap:24px 12px;margin-top:30px;width:100%}
   .srch:not(.hidden) + .apps{margin-top:24px}
   .app,.apps.many .app{width:calc(50% - 6px);max-width:170px;gap:9px}
-  /* icon dien thoai: 86 -> 69px (nho hon 20%) */
-  .ic,.apps.many .ic{width:69px;height:69px;border-radius:18px;box-shadow:0 10px 22px rgba(5,20,60,.5)}
-  .ic svg,.apps.many .ic svg{width:32px;height:32px}
-  .ic:after{border-radius:18px}
-  .tag,.apps.many .tag{top:50px;font-size:9.5px;padding:2px 7px}
-  .ctl,.apps.many .ctl{top:-14px;right:calc(50% - 50px)}
+  /* icon dien thoai: CUNG kich thuoc voi may tinh (128px; nhieu ung dung: 108px) -> dung chung quy tac .ic / .apps.many .ic o tren */
+  .tag,.apps.many .tag{font-size:9.5px;padding:2px 7px}
   .ctl button{width:26px;height:26px}
   .ctl button svg{width:13px;height:13px}
   .nm{font-size:14.5px}
