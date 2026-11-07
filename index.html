@@ -72,23 +72,23 @@ h1 span{color:var(--yellow);font-weight:400}
 .apps{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 64px;margin-top:56px;max-width:1100px}
 .srch:not(.hidden) + .apps{margin-top:40px}
 .app{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px;text-decoration:none;color:var(--txt);outline:none;width:180px;border-radius:20px}
-/* icon ung dung: giam 40% (102 -> 61px; nhieu ung dung 86 -> 52px) - may tinh va dien thoai dung chung */
-.ic{width:61px;height:61px;border-radius:16px;display:grid;place-items:center;position:relative;
+/* icon ung dung: tang 30% (61 -> 79px; nhieu ung dung 52 -> 68px) - may tinh va dien thoai dung chung */
+.ic{width:79px;height:79px;border-radius:21px;display:grid;place-items:center;position:relative;
   background:linear-gradient(150deg,#2a6fd0 0%,#173f86 100%);box-shadow:0 18px 40px rgba(5,20,60,.55);
   transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s}
-.ic svg{width:28px;height:28px;fill:none;stroke:var(--yellow);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ic svg{width:36px;height:36px;fill:none;stroke:var(--yellow);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .ic:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(0,0,0,.15)}
 .app:hover .ic,.app:focus-visible .ic{transform:translateY(-6px) scale(1.04);box-shadow:0 26px 50px rgba(5,20,60,.7),0 0 0 6px rgba(245,197,24,.22)}
 .app:active .ic{transform:scale(.97)}
 .nm{font-size:17px;font-weight:500;letter-spacing:.1px;max-width:100%;overflow-wrap:anywhere}
 .ds{font-size:13px;color:var(--dim);line-height:1.5;margin-top:-8px;max-width:100%;overflow-wrap:anywhere}
-.kh{position:absolute;top:-6px;left:calc(50% + 24px);font:600 11px Inter,sans-serif;color:#1b2a4a;background:var(--yellow);border-radius:6px;padding:2px 6px;opacity:0;transform:translateY(4px);transition:.15s;pointer-events:none}
+.kh{position:absolute;top:-6px;left:calc(50% + 33px);font:600 11px Inter,sans-serif;color:#1b2a4a;background:var(--yellow);border-radius:6px;padding:2px 6px;opacity:0;transform:translateY(4px);transition:.15s;pointer-events:none}
 .app:hover .kh,.app:focus-visible .kh{opacity:1;transform:none}
 .apps.many{gap:36px 44px}
 .apps.many .app{width:150px}
-.apps.many .ic{width:52px;height:52px;border-radius:13px}
-.apps.many .ic svg{width:23px;height:23px}
-.apps.many .kh{left:calc(50% + 19px)}
+.apps.many .ic{width:68px;height:68px;border-radius:17px}
+.apps.many .ic svg{width:30px;height:30px}
+.apps.many .kh{left:calc(50% + 27px)}
 .empty{color:var(--dim);font-size:14px;padding:30px 0}
 
 /* che do cau hinh: tile */
@@ -98,10 +98,10 @@ body.edit .app .ic{outline:2px dashed rgba(245,197,24,.0);outline-offset:6px}
 body.edit .app:hover .ic{outline-color:rgba(245,197,24,.6)}
 .app.off .ic{filter:grayscale(.75);opacity:.45}
 .app.off .nm,.app.off .ds{opacity:.5}
-.tag{position:absolute;top:46px;left:50%;transform:translateX(-50%);font:600 10.5px Inter,sans-serif;letter-spacing:.4px;color:#fff;background:#475569;border-radius:999px;padding:3px 9px;white-space:nowrap}
-.apps.many .tag{top:37px}
-.ctl{position:absolute;top:-12px;right:calc(50% - 84px);display:flex;gap:4px;z-index:2}
-.apps.many .ctl{right:calc(50% - 74px)}
+.tag{position:absolute;top:60px;left:50%;transform:translateX(-50%);font:600 10.5px Inter,sans-serif;letter-spacing:.4px;color:#fff;background:#475569;border-radius:999px;padding:3px 9px;white-space:nowrap}
+.apps.many .tag{top:48px}
+.ctl{position:absolute;top:-12px;right:calc(50% - 93px);display:flex;gap:4px;z-index:2}
+.apps.many .ctl{right:calc(50% - 82px)}
 .ctl button{width:30px;height:30px;border-radius:50%;border:0;display:grid;place-items:center;background:#fff;color:var(--navy);box-shadow:0 4px 12px rgba(0,0,0,.3);transition:.12s}
 .ctl button:hover{background:var(--yellow)}
 .ctl button svg{width:15px;height:15px}
@@ -198,9 +198,9 @@ footer{position:relative;padding:0 24px calc(14px + env(safe-area-inset-bottom))
   .apps,.apps.many{gap:24px 12px;margin-top:30px;width:100%}
   .srch:not(.hidden) + .apps{margin-top:24px}
   .app,.apps.many .app{width:calc(50% - 6px);max-width:170px;gap:9px}
-  /* icon dien thoai: CUNG kich thuoc voi may tinh (61px; nhieu ung dung: 52px) -> dung chung quy tac .ic / .apps.many .ic o tren */
+  /* icon dien thoai: CUNG kich thuoc voi may tinh (79px; nhieu ung dung: 68px) -> dung chung quy tac .ic / .apps.many .ic o tren */
   .tag,.apps.many .tag{font-size:9.5px;padding:2px 7px}
-  .ctl,.apps.many .ctl{right:calc(50% - 76px)}
+  .ctl,.apps.many .ctl{right:calc(50% - 85px)}
   .ctl button{width:26px;height:26px}
   .ctl button svg{width:13px;height:13px}
   .nm{font-size:14.5px}
